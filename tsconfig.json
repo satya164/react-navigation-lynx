@@ -11,6 +11,7 @@
     "lib": ["esnext", "dom"],
     "module": "preserve",
     "moduleResolution": "bundler",
+    "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noImplicitUseStrict": false,

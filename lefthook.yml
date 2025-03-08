@@ -1,0 +1,11 @@
+pre-commit:
+  parallel: true
+  commands:
+    types:
+      glob: "*.{json,js,ts,tsx}"
+      run: yarn tsc --noEmit
+commit-msg:
+  parallel: true
+  commands:
+    commitlint:
+      run: yarn commitlint --edit
