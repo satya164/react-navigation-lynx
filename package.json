@@ -1,0 +1,52 @@
+{
+  "name": "react-navigation-lynx",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./src/index.tsx",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "build": "rspeedy build",
+    "dev": "rspeedy dev",
+    "preview": "rspeedy preview"
+  },
+  "dependencies": {
+    "@react-navigation/core": "^7.4.0"
+  },
+  "devDependencies": {
+    "@lynx-js/qrcode-rsbuild-plugin": "^0.3.3",
+    "@lynx-js/react": "^0.105.0",
+    "@lynx-js/react-rsbuild-plugin": "^0.9.0",
+    "@lynx-js/rspeedy": "^0.8.2",
+    "@lynx-js/types": "^3.2.0",
+    "@release-it/conventional-changelog": "^10.0.0",
+    "@types/react": "^18.3.18",
+    "release-it": "^18.1.2",
+    "typescript": "~5.7.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "yarn@4.7.0",
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": {
+          "name": "conventionalcommits"
+        },
+        "infile": "CHANGELOG.md"
+      }
+    }
+  }
+}
