@@ -1,5 +1,4 @@
 import {
-  createNavigatorFactory,
   type DefaultNavigatorOptions,
   type NavigationProp,
   type NavigatorTypeBagBase,
@@ -10,14 +9,15 @@ import {
   type StackRouterOptions,
   type StaticConfig,
   type TypedNavigator,
-  useNavigationBuilder
-} from "@react-navigation/core";
-import styles from './styles.module.css'
+  createNavigatorFactory,
+  useNavigationBuilder,
+} from '@react-navigation/core';
+import styles from './styles.module.css';
 
 type StackNavigationProp<
   ParamList extends ParamListBase,
   RouteName extends keyof ParamList = keyof ParamList,
-  NavigatorID extends string | undefined = undefined
+  NavigatorID extends string | undefined = undefined,
 > = NavigationProp<
   ParamList,
   RouteName,
@@ -28,6 +28,7 @@ type StackNavigationProp<
 > &
   StackActionHelpers<ParamList>;
 
+// biome-ignore lint/complexity/noBannedTypes: TODO
 type StackNavigationConfig = {};
 
 type StackNavigationOptions = {
@@ -62,22 +63,21 @@ function StackNavigator({
   screenOptions,
   screenLayout,
 }: Props) {
-  const { state, descriptors, NavigationContent } =
-    useNavigationBuilder<
-      StackNavigationState<ParamListBase>,
-      StackRouterOptions,
-      StackActionHelpers<ParamListBase>,
-      StackNavigationOptions,
-      StackNavigationEventMap
-    >(StackRouter, {
-      id,
-      initialRouteName,
-      children,
-      layout,
-      screenListeners,
-      screenOptions,
-      screenLayout,
-    });
+  const { state, descriptors, NavigationContent } = useNavigationBuilder<
+    StackNavigationState<ParamListBase>,
+    StackRouterOptions,
+    StackActionHelpers<ParamListBase>,
+    StackNavigationOptions,
+    StackNavigationEventMap
+  >(StackRouter, {
+    id,
+    initialRouteName,
+    children,
+    layout,
+    screenListeners,
+    screenOptions,
+    screenLayout,
+  });
 
   return (
     <NavigationContent>
@@ -112,7 +112,7 @@ export function createStackNavigator<
     };
     Navigator: typeof StackNavigator;
   },
-  const Config extends StaticConfig<TypeBag> = StaticConfig<TypeBag>
+  const Config extends StaticConfig<TypeBag> = StaticConfig<TypeBag>,
 >(config?: Config): TypedNavigator<TypeBag, Config> {
   return createNavigatorFactory(StackNavigator)(config);
 }

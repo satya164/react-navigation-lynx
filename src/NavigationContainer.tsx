@@ -1,10 +1,10 @@
+import * as React from '@lynx-js/react';
 import {
   BaseNavigationContainer,
   type NavigationContainerProps,
   type NavigationContainerRef,
   type ParamListBase,
 } from '@react-navigation/core';
-import * as React from '@lynx-js/react';
 
 type Props = NavigationContainerProps & {
   fallback?: React.ReactNode;
@@ -24,7 +24,7 @@ type Props = NavigationContainerProps & {
  */
 function NavigationContainerInner(
   props: Props,
-  ref?: React.Ref<NavigationContainerRef<ParamListBase> | null>
+  ref?: React.Ref<NavigationContainerRef<ParamListBase> | null>,
 ) {
   const refContainer =
     React.useRef<NavigationContainerRef<ParamListBase>>(null);
@@ -35,9 +35,9 @@ function NavigationContainerInner(
 }
 
 export const NavigationContainer = React.forwardRef(
-  NavigationContainerInner
+  NavigationContainerInner,
 ) as <RootParamList extends {} = ReactNavigation.RootParamList>(
   props: Props & {
     ref?: React.Ref<NavigationContainerRef<RootParamList>>;
-  }
+  },
 ) => React.ReactElement;

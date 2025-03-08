@@ -3,19 +3,19 @@
   "version": "0.0.1",
   "type": "module",
   "main": "./src/index.tsx",
-  "files": [
-    "src"
-  ],
+  "files": ["src"],
   "scripts": {
     "build": "rspeedy build",
     "dev": "rspeedy dev",
     "preview": "rspeedy preview",
+    "lint": "biome check",
     "typecheck": "tsc"
   },
   "dependencies": {
     "@react-navigation/core": "^7.4.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@commitlint/config-conventional": "^19.8.0",
     "@lynx-js/qrcode-rsbuild-plugin": "^0.3.3",
     "@lynx-js/react": "^0.105.0",
@@ -26,6 +26,7 @@
     "@types/react": "^18.3.18",
     "commitlint": "^19.8.0",
     "lefthook": "^1.11.3",
+    "prettier": "^3.5.2",
     "release-it": "^18.1.2",
     "typescript": "~5.7.3"
   },
@@ -33,10 +34,15 @@
     "node": ">=18"
   },
   "packageManager": "yarn@4.7.0",
+  "prettier": {
+    "quoteProps": "as-needed",
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
+    "extends": ["@commitlint/config-conventional"]
   },
   "release-it": {
     "git": {

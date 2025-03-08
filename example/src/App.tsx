@@ -1,8 +1,8 @@
 import {
-  createStaticNavigation,
-  createStackNavigator,
-  useNavigation,
   type StaticParamList,
+  createStackNavigator,
+  createStaticNavigation,
+  useNavigation,
 } from 'react-navigation-lynx';
 
 const ScreenA = () => {

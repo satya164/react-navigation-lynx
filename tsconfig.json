@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "paths": {
-      "react-navigation-lynx": ["./src/index.tsx"],
+      "react-navigation-lynx": ["./src/index.tsx"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

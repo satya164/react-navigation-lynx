@@ -19,3 +19,6 @@ jobs:
 
       - name: Typecheck files
         run: yarn typecheck
+
+      - name: Lint files
+        run: yarn lint

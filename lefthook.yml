@@ -1,6 +1,9 @@
 pre-commit:
   parallel: true
   commands:
+    lint:
+      glob: "*.{js,ts,tsx}"
+      run: yarn lint
     types:
       glob: "*.{json,js,ts,tsx}"
       run: yarn tsc --noEmit
