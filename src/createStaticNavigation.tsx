@@ -4,7 +4,7 @@ import {
   type ParamListBase,
   type StaticNavigation
 } from '@react-navigation/core';
-import * as React from 'react';
+import * as React from '@lynx-js/react';
 
 import { NavigationContainer } from './NavigationContainer';
 

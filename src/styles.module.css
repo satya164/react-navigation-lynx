@@ -1,0 +1,13 @@
+.container {
+  height: 100%;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.3);
+}

@@ -12,6 +12,7 @@ import {
   type TypedNavigator,
   useNavigationBuilder
 } from "@react-navigation/core";
+import styles from './styles.module.css'
 
 type StackNavigationProp<
   ParamList extends ParamListBase,
@@ -80,10 +81,10 @@ function StackNavigator({
 
   return (
     <NavigationContent>
-      <view style={{ flex: 1, position: "relative" }}>
+      <view class={styles.container}>
         {state.routes.map((route) => {
           return (
-            <view key={route.key} style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}>
+            <view key={route.key} class={styles.screen}>
               {descriptors[route.key].render()}
             </view>
           );

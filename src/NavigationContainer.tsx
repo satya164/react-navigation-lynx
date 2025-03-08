@@ -2,9 +2,9 @@ import {
   BaseNavigationContainer,
   type NavigationContainerProps,
   type NavigationContainerRef,
-  type ParamListBase
-} from "@react-navigation/core";
-import * as React from "react";
+  type ParamListBase,
+} from '@react-navigation/core';
+import * as React from '@lynx-js/react';
 
 type Props = NavigationContainerProps & {
   fallback?: React.ReactNode;

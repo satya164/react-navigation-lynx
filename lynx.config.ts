@@ -7,7 +7,6 @@ export default defineConfig({
   source: {
     entry: './example/src/index.tsx',
     alias: {
-      'react': '@lynx-js/react',
       'react-navigation-lynx': './src/index.tsx',
     },
   },

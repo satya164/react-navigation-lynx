@@ -1,20 +1,31 @@
 import {
   createStaticNavigation,
   createStackNavigator,
-} from "react-navigation-lynx";
+  useNavigation,
+  type StaticParamList,
+} from 'react-navigation-lynx';
 
 const ScreenA = () => {
+  const navigation = useNavigation();
+
   return (
-    <view style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <text>Screen A</text>
+    <view
+      style={{ height: '100%', justifyContent: 'center', alignItems: 'center' }}
+    >
+      <text bindtap={() => navigation.navigate('ScreenB')}>Screen A</text>
     </view>
   );
 };
 
 const ScreenB = () => {
+  const navigation = useNavigation();
+
   return (
-    <view style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <view
+      style={{ height: '100%', justifyContent: 'center', alignItems: 'center' }}
+    >
       <text>Screen B</text>
+      <text bindtap={() => navigation.goBack()}>Go back to Screen A</text>
     </view>
   );
 };
@@ -30,4 +41,12 @@ const Navigation = createStaticNavigation(RootStack);
 
 export function App() {
   return <Navigation />;
+}
+
+type RootStackParamList = StaticParamList<typeof RootStack>;
+
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList extends RootStackParamList {}
+  }
 }
